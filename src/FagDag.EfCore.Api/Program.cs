@@ -18,6 +18,11 @@ builder.Services.AddControllers();
 
 
 var app = builder.Build();
+using (var scope = app.Services.CreateScope())
+using (var dbContext = scope.ServiceProvider.GetRequiredService<EpicEventsDbContext>())
+{
+    dbContext.Database.EnsureCreated();
+}
 
 // Configure the HTTP request pipeline.
 app.MapOpenApi();

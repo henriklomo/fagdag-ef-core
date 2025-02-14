@@ -1,4 +1,8 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace FagDag.EfCore.Database;
+
+[Table("Events")]
 
 public class Event
 {
@@ -8,4 +12,5 @@ public class Event
     public DateTime StartDate { get; set; }
     public DateTime EndDate { get; set; }
     public Location? Location { get; set; }
+    public string MusicType { get; set; }
 }

@@ -1,4 +1,8 @@
+
+using System.ComponentModel.DataAnnotations.Schema;
 namespace FagDag.EfCore.Database;
+
+[Table("Location")]
 
 public class Location
 {
